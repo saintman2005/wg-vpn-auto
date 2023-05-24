@@ -7,8 +7,9 @@ PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)
 
 WG_CATALOG=/usr/local/bin/wgui
-WG_ADDERSS=10.0.1.0
-WG_PORT=51823
+#For protect Web-Interface access just from wg-connected addresses uncomment 2 below lines and 88 line
+#WG_ADDRESS=10.252.1.0
+#WG_PORT=5000
 
 # Functions
 # -------------------------------------------------------------------------------------------\
@@ -84,7 +85,7 @@ After=syslog.target network.target
 [Service]
 Type=simple
 PIDFile=/run/wgweb.pid
-ExecStart=$WG_CATALOG/wireguard-ui # -bind-address $WG_ADDERSS:$WG_PORT
+ExecStart=$WG_CATALOG/wireguard-ui # -bind-address $WG_ADDRESS:$WG_PORT
 WorkingDirectory=/usr/local/bin/wgui/
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID
