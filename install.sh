@@ -47,8 +47,8 @@ function sysctl_forwarder() {
 function install_wg_gui() {
     mkdir -p $WG_CATALOG
     cd $WG_CATALOG
-    wget https://github.com/ngoduykhanh/wireguard-ui/releases/download/v0.4.0/wireguard-ui-v0.4.0-linux-amd64.tar.gz
-    tar zxvf wireguard-ui-v0.4.0-linux-amd64.tar.gz
+    wget https://github.com/ngoduykhanh/wireguard-ui/releases/download/v0.6.2/wireguard-ui-v0.6.2-linux-amd64.tar.gz
+    tar zxvf wireguard-ui-v0.6.2-linux-amd64.tar.gz
 }
 
 # Create systemd unit for wireguard
@@ -101,7 +101,7 @@ EOF
 
 }
 
-# Add public ssh key to root user
+# Add public ssh key to root user - change to yours!
 function add_ssh_key() {
     mkdir -p /root/.ssh
     cat > /root/.ssh/authorized_keys <<EOF
