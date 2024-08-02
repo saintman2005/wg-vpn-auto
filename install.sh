@@ -47,8 +47,8 @@ function sysctl_forwarder() {
 function install_wg_gui() {
     mkdir -p $WG_CATALOG
     cd $WG_CATALOG
-    wget https://github.com/ngoduykhanh/wireguard-ui/releases/download/v0.6.2/wireguard-ui-v0.6.2-linux-amd64.tar.gz
-    tar zxvf wireguard-ui-v0.6.2-linux-amd64.tar.gz
+    wget https://github.com/ngoduykhanh/wireguard-ui/releases/download/v0.3.6/wireguard-ui-v0.3.6-linux-amd64.tar.gz
+    tar zxvf wireguard-ui-v0.3.6-linux-amd64.tar.gz
 }
 
 # Create systemd unit for wireguard
